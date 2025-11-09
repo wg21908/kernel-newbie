@@ -109,7 +109,31 @@ Steps Completed
     # Amend the existing commit with your new updates
     git commit --amend --signoff
 
-    # INSERT_1ST_PHOTO_HERE, a screenshot of the commit message body
+    #
+    # Start of Good looking commit message body
+    #
+    
+    From: Your Name <your.email@example.com>
+    Subject: [PATCH v2] copy_file_range.2: clarify fallback behavior after glibc change
+    
+    Clarify that glibc no longer provides a fallback implementation of
+    copy_file_range(), and that applications must handle ENOSYS themselves.
+    
+    This update improves the documentation to reflect that the syscall
+    may fail if the underlying kernel does not support copy_file_range(),
+    and glibc no longer emulates it. The text now explicitly advises
+    callers to provide their own fallback copy logic.
+    
+    Signed-off-by: Your Name <your.email@example.com>
+    ---
+    v2:
+     - Fixed grammar and clarified sentence structure in fallback paragraph.
+     - Added explicit mention that glibc 2.38 removed the fallback.
+     - Minor style cleanup (line wrapping and formatting).
+
+    #
+    # End of Good looking commit message body
+    #
 
     # Generate your v2 patch
     git format-patch -v2 origin/master
