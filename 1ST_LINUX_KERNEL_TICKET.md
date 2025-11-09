@@ -64,16 +64,19 @@ The steps I followed to carry out the fix are listed below.
     scripts/get_maintainer.pl 0001-*.patch
     
     # Send in patch file 
-    git send-email --to=linux-man@vger.kernel.org --cc=mtk.manpages@gmail.com 0001-Subject-copy_file_range.2-glibc-no-longer-provides-f.patch
+    git send-email --to=linux-man@vger.kernel.org \
+      --cc=mtk.manpages@gmail.com 0001-Subject-copy_file_range.2-glibc-no-longer-provides-f.patch
 
     # Optional verification, confirm what I sent matches what will appear on the mailing list
     git send-email --dry-run --to=linux-man@vger.kernel.org --cc=mtk.manpages@gmail.com 0001-*.patch
 
-    # The archive showing the emailed patch can be seen at https://lore.kernel.org/linux-man/20251025221258.45073-1-wg21908@gmail.com/T/#u
+    # The archive showing the emailed patch can be seen at 
+    #   https://lore.kernel.org/linux-man/20251025221258.45073-1-wg21908@gmail.com/T/#u
 
 ## Applying Peer Review Feedback
 
-Peer review feedback from Alejandro Colomar "aka: Alex" can be seen at https://lore.kernel.org/linux-man/u7yt6in3t7ng6o5nq4kqrls5ldjkr7p6nnihpi7i2upg43cbcb@qm4qani52cdz/
+Peer review feedback from Alejandro Colomar "aka: Alex" can be seen at 
+https://lore.kernel.org/linux-man/u7yt6in3t7ng6o5nq4kqrls5ldjkr7p6nnihpi7i2upg43cbcb@qm4qani52cdz/
 
 A summary of feedback received is below.
 
@@ -84,10 +87,12 @@ A summary of feedback received is below.
 
 My solutions to feedback is below.  
 
-1. For some reason the default author was not myself but got set to Sebastion, ran this: `git commit --amend --author="Wes Gibbs <wg21908@gmail.com>" --signoff` 
-2. Modified man/man2/copy_file_range.2 to include "... starting with glibc 2.27, ..." verbiage that it was version 2.27 of Linux kernel
-3. Modified man/man2/copy_file_range.2 to start new sentences on the next line  
-4. I found the correct Git Hash commit URL and applied it in the commenting of the  man/man2/copy_file_range.2 file
+1. For some reason the default author was not myself but got set to Sebastion, ran this:
+   `git commit --amend --author="Wes Gibbs <wg21908@gmail.com>" --signoff` 
+3. Modified man/man2/copy_file_range.2 to include "... starting with glibc 2.27, ..." verbiage that it was
+   version 2.27 of Linux kernel
+4. Modified man/man2/copy_file_range.2 to start new sentences on the next line  
+5. I found the correct Git Hash commit URL and applied it in the commenting of the man/man2/copy_file_range.2 file
 
 Steps Completed  
 
@@ -149,7 +154,8 @@ Steps Completed
 
     #
     # Send the v2 patch
-    #   FYI You can find that message ID in your mail client’s headers for the original v1 email (look for the Message-ID: field).
+    #   FYI You can find that message ID in your mail client’s headers for the original v1 email (look for 
+    #     the Message-ID: field).
     #
     git send-email \
       --to=linux-man@vger.kernel.org \
@@ -157,11 +163,13 @@ Steps Completed
       --in-reply-to=<message-id-of-v1@something> \
       0001-*.patch
 
-    Last submitted patch that addressed PR feedback can be see at https://lore.kernel.org/linux-man/20251102000330.155591-1-wg21908@gmail.com/
+    Last submitted patch that addressed PR feedback can be see at 
+      https://lore.kernel.org/linux-man/20251102000330.155591-1-wg21908@gmail.com/
 
 ## Lessons Learned
 
-- Bugzilla ticket won't get assinged to me.  Emailing maintainers and putting comment in ticket is only action needed.
+- Bugzilla ticket won't get assinged to me.  Emailing maintainers and putting comment in ticket is only
+  action needed.
 - Bugzilla ticket not likely to get status updated till its officially merged.
 - Don't try to respond to email recieved by Gmail or some other non-text based email service.  Use Mutt, Sendmail, Procmail, and Fetchmail Linux email software for communication with MAINTAINERS.
 
