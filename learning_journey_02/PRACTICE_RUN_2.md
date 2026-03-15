@@ -269,10 +269,18 @@ Then start `gdb` again.
 Inside `gdb`, run:
 
 ```gdb
-target remote :1234
-hbreak *0x000000000000fff0
-hbreak startup_64
-break start_kernel
+target remote :1234                   # connecting
+hbreak *0x000000000000fff0            # setting hardware based breakpoint
+help                                  # gdb help
+help info                             # gdb help on info class
+info breakpoints                      # view currently defined breakpoints
+disable 1                             # disable breakpoint
+delete 1                              # delete breakpoint
+hbreak *0x000000000000fff0            # setting hardware based breakpoint
+hbreak startup_64                     # setting hardware based breakpoint 
+hbreak start_kernel                   # setting hardware based breakpoint
+list                                  # show current source line
+frame                                 # show current source line
 continue
 lx-symbols
 ```
