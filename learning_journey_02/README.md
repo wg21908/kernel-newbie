@@ -23,8 +23,8 @@ Files
 
 - [QEMU Virtual Machine (VM) Based Testing](QEMU_VM_BASED_TESTING.md):
   - Intention: a file where I describe the steps to setup a Virtual Machine (VM)
-    based Linux kernel develop environment.  The test environment is based
-    on the popular Linux QEMU technology.
+    based Linux kernel test machine.  The test environment is based
+    on Linux QEMU technology.
     
 - [Practice Run #1](PRACTICE_RUN_1.md):
   - Purpose: a concise checklist for a practice change and verification loop.
