@@ -34,8 +34,9 @@ Files
     how to verify with `dmesg`, and how to revert the practice change
     (`git reset --hard HEAD`).
 
-- Practice Run #2 (coming soon):
-  - Purpose: GDB Debugging in Linux native environment and against QEMU VM.
+- [Practice Run #2](PRACTICE_RUN_2.md):
+  - Purpose: GDB Debugging in Linux native environment against Linux kernel
+    in guest QEMU VM.
   - Key contents: 
     
 How to use these notes
