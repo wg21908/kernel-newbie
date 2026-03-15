@@ -2,8 +2,9 @@
 
 This directory contains notes and walkthroughs for setting up a Linux kernel
 development environment, QEMU-based test environment, and performing 2 different 
-practice runs. Read these in the order below: first the environment setup, then 
-QEMU test environment, then the 2 practice runs. 
+practice runs. All of this documention is to prepare someone for actual Linux
+kernel development.  Read these in the order below: first the environment setup, 
+then QEMU test environment, then the 2 practice runs. 
 
 Files
 -
