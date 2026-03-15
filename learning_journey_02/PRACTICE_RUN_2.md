@@ -114,7 +114,7 @@ This is a good location because:
 Check for these options:
 
 ```bash
-grep -E 'CONFIG_DEBUG_INFO=|CONFIG_GDB_SCRIPTS=|CONFIG_FRAME_POINTER=' .config
+grep -E 'CONFIG_DEBUG_INFO=|CONFIG_GDB_SCRIPTS=|CONFIG_FRAME_POINTER=|CONFIG_RANDOMIZE_BASE=' .config
 ```
 
 You want to see values like:
@@ -193,11 +193,12 @@ sudo qemu-system-x86_64 \
   -cpu host \
   -enable-kvm \
   -kernel arch/x86/boot/bzImage \
-  -append "console=ttyS0 nokaslr" \
+  -append "root=/dev/rlm/root console=ttyS0 nokaslr earlyprintk=serial rd.shell panic=1" \
+  -drive file=practicerun2.qcow2,if=virtio,format=qcow2 \
   -initrd /boot/initramfs-$(uname -r).img \
   -nographic \
   -m 4096 \
-  -s -S
+  -s -S   
 ```
 
 ### What each option means
@@ -210,6 +211,12 @@ sudo qemu-system-x86_64 \
   - `console=ttyS0` sends boot output to the serial console
   - `nokaslr` disables kernel address randomization so addresses line up with debug symbols
 
+- `-drive file=practicerun2.qcow2,if=virtio,format=qcow2`
+  This attaches the disk image practicerun2.qcow2 to the VM as a VirtIO virtual disk, using the qcow2 disk
+  - `file=practicerun2.qcow2` Disk image file used as the VM disk
+  - `if=virtio` Virtual disk interface type presented to the guest
+  - `format=qcow2` Disk image format
+  
 - `-initrd /boot/initramfs-$(uname -r).img`  
   Supplies an initramfs.  
   For an early learning run, using the host initramfs is often enough to get started.
@@ -262,16 +269,12 @@ Then start `gdb` again.
 Inside `gdb`, run:
 
 ```gdb
-
-
 target remote :1234
 hbreak *0x000000000000fff0
 hbreak startup_64
-continue
-hbreak start_kernel
+break start_kernel
 continue
 lx-symbols
-
 ```
 
 Here is what each command does and what is occurring internally.
