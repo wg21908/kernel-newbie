@@ -21,7 +21,7 @@ Files
     Google App Password), testing send-email, and a typical workflow for
     preparing and emailing patches.
 
-- [QEMU Virtual Machine (VM) Based Testing](QEMU_VM_BASED_TESTING.md):
+- [QEMU Virtual Machine (VM) Test Environment Creation](QEMU_VM_BASED_TESTING.md):
   - Intention: a file where I describe the steps to setup a Virtual Machine (VM)
     based Linux kernel test machine.  The test environment is based
     on Linux QEMU technology.
