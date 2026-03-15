@@ -122,7 +122,8 @@ You want to see values like:
 ```text
 CONFIG_DEBUG_INFO=y
 CONFIG_GDB_SCRIPTS=y        # Kernel hacking, Compile-time checks and compiler options, Provide GDB scripts for kernel debugging
-CONFIG_FRAME_POINTER=y      # Kernel hacking, Compile-time checks and compiler options, Compile the kernel with frame pointers 
+CONFIG_FRAME_POINTER=y      # Kernel hacking, Compile-time checks and compiler options, Compile the kernel with frame pointers
+CONFIG_RANDOMIZE_BASE=n     # Processor type and features, Build a relocatable kernel, Randomize the address of the kernel image (KASLR).  The kernel docs explicitly recommend that for QEMU direct boot debugging.
 ```
 
 If any are missing, run:
@@ -144,6 +145,8 @@ Then enable the relevant options.
 - `CONFIG_FRAME_POINTER=y`  
   Helps produce more reliable stack traces and makes debugging easier.
 
+- `CONFIG_RANDOMIZE_BASE=n`
+  The kernel docs explicitly recommend that for QEMU direct boot debugging.
 ---
 
 ## Step 4 — Build the kernel
@@ -259,10 +262,16 @@ Then start `gdb` again.
 Inside `gdb`, run:
 
 ```gdb
+
+
 target remote :1234
-break start_kernel
+hbreak *0x000000000000fff0
+hbreak startup_64
+continue
+hbreak start_kernel
 continue
 lx-symbols
+
 ```
 
 Here is what each command does and what is occurring internally.
