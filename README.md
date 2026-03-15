@@ -1,6 +1,21 @@
 # Kernel Newbie
 
-This repository documents my early Linux kernel contribution journey, including my first ticket workflow and patch submission history.
+This repository documents my journey learning Linux kernel development from beginner to contributor.  The goal is to build a reproducible 
+development environment, practice kernel modifications, and understand debugging workflows using tools such as git, gdb, and QEMU. Each 
+learning_journey directory captures a milestone.
+
+## Environment Architecture
+
+    +----------------------+
+    | Rocky Linux Host     |
+    |                      |
+    |  gdb                 |
+    |    │                 |
+    |    │ remote debug    |
+    |    ▼                 |
+    |  QEMU VM             |
+    |   └ custom kernel    |
+    +----------------------+
 
 ## Repository Contents
 
