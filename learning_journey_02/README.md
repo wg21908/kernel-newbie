@@ -21,8 +21,8 @@ Files
     preparing and emailing patches.
 
 - [QEMU Virtual Machine (VM) Based Testing](QEMU_VM_BASED_TESTING.md):
-  - Intention: an upcoming file where I'll describe the steps to setup a Virtual Machine (VM)
-    based Linux kernel develop environment.  This development environment will be based
+  - Intention: a file where I describe the steps to setup a Virtual Machine (VM)
+    based Linux kernel develop environment.  The test environment is based
     on the popular Linux QEMU technology.
     
 - [Practice Run #1](PRACTICE_RUN_1.md):
