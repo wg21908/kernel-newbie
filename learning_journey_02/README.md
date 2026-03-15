@@ -1,9 +1,9 @@
 # Learning Journey 02 — Development & Practice notes
 
 This directory contains notes and walkthroughs for setting up a Linux kernel
-development environment and performing a practice run. Read these in the
-order below: first the environment setup, then the practice run. A third file
-(`THE_REAL_DEAL.md`) describing an official ticket will be added soon.
+development environment, QEMU-based test environment, and performing 2 different 
+practice runs. Read these in the order below: first the environment setup, then 
+QEMU test environment, then the 2 practice runs. 
 
 Files
 -
