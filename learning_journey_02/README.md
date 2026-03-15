@@ -22,9 +22,14 @@ Files
     preparing and emailing patches.
 
 - [QEMU Virtual Machine (VM) Test Environment Creation](QEMU_VM_BASED_TESTING.md):
-  - Intention: a file where I describe the steps to setup a Virtual Machine (VM)
-    based Linux kernel test machine.  The test environment is based
-    on Linux QEMU technology.
+  - Purpose: Create a QEMU-based virtual machine test environment for safely booting
+    and testing custom-built Linux kernels outside of the host system.
+  - Key contents: installing QEMU/KVM virtualization tools (qemu-kvm, qemu-img,
+    virt-install, virt-manager), verifying CPU virtualization support (lscpu, /proc/cpuinfo,
+    lsmod kvm), creating a QCOW2 disk image (qemu-img create), launching a VM with
+    qemu-system-x86_64, installing Rocky Linux via VNC (tigervnc, vncviewer), rebuilding
+    initramfs with virtio drivers (dracut), and booting a custom kernel in the VM with kernel
+    parameters for debugging (console=ttyS0, nokaslr, earlyprintk, rd.shell).
     
 - [Practice Run #1](PRACTICE_RUN_1.md):
   - Purpose: a concise checklist for a practice change and verification loop.
