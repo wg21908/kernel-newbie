@@ -185,7 +185,10 @@ ls -lh vmlinux arch/x86/boot/bzImage
 Run:
 
 ```bash
-qemu-system-x86_64 \
+sudo qemu-system-x86_64 \
+  -machine q35 \
+  -cpu host \
+  -enable-kvm \
   -kernel arch/x86/boot/bzImage \
   -append "console=ttyS0 nokaslr" \
   -initrd /boot/initramfs-$(uname -r).img \
@@ -257,9 +260,9 @@ Inside `gdb`, run:
 
 ```gdb
 target remote :1234
-lx-symbols
 break start_kernel
 continue
+lx-symbols
 ```
 
 Here is what each command does and what is occurring internally.
