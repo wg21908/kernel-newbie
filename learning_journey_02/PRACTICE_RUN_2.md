@@ -121,8 +121,8 @@ You want to see values like:
 
 ```text
 CONFIG_DEBUG_INFO=y
-CONFIG_GDB_SCRIPTS=y
-CONFIG_FRAME_POINTER=y
+CONFIG_GDB_SCRIPTS=y        # Kernel hacking, Compile-time checks and compiler options, Provide GDB scripts for kernel debugging
+CONFIG_FRAME_POINTER=y      # Kernel hacking, Compile-time checks and compiler options, Compile the kernel with frame pointers 
 ```
 
 If any are missing, run:
