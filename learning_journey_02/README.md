@@ -37,8 +37,14 @@ Files
 
 - [Practice Run #2](PRACTICE_RUN_2.md):
   - Purpose: GDB Debugging in Linux native environment against Linux kernel
-    in guest QEMU VM.
-  - Key contents: 
+    in guest QEMU VM.  Second practice run of building and installing a custom
+    Linux kernel, focusing on using GDB to debug and validate changes made to
+    kernel source code.
+  - Key contents: using gdb for kernel debugging, compiling kernel with debug
+    symbols (CONFIG_DEBUG_INFO), running kernel under qemu with -s -S for debugger
+    attachment, connecting gdb to the kernel (target remote), inspecting stack
+    traces and variables, and using debugging to diagnose practice kernel source c
+    ode changes.
     
 How to use these notes
 -
