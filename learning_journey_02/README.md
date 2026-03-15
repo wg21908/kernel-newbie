@@ -48,7 +48,7 @@ How to use these notes
 - Step 3: Use [Practice Run #1](PRACTICE_RUN_1.md) to make a
   small, reversible change and exercise the build/send/test loop.
 - Step 4: Use [Practice Run #2](PRACTICE_RUN_2.md) to understand process of using GDB against
-  kernel in native Linux environment and kernel in QEMU VM.
+  Linux kernel in QEMU VM.
   
 ## Questions / Support
 
