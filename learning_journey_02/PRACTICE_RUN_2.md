@@ -200,7 +200,7 @@ sudo qemu-system-x86_64 \
   -kernel arch/x86/boot/bzImage \
   -append "root=/dev/rlm/root console=ttyS0 nokaslr earlyprintk=serial rd.shell panic=1" \
   -drive file=practicerun2.qcow2,if=virtio,format=qcow2 \
-  -initrd /boot/initramfs-$(uname -r).img \
+  -initrd $HOME/kernel-artifacts/initramfs-$KVER.img \
   -nographic \
   -m 4096 \
   -s -S   
