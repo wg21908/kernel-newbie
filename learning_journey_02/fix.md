@@ -2,8 +2,6 @@
 KVER=$(make kernelrelease)
 echo "$KVER"
 
-sudo dracut --force "$HOME/kernel-artifacts/initramfs-$KVER.img" "$KVER"
-
 mkdir -p "$HOME/kernel-artifacts"  
 make -j"$(nproc)"  
 sudo make modules_install  
