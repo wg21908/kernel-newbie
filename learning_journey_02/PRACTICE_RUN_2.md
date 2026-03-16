@@ -154,6 +154,8 @@ Then enable the relevant options.
 Build the kernel:
 
 ```bash
+KVER=$(make kernelrelease) echo "$KVER"
+mkdir -p "$HOME/kernel-artifacts"
 make -j"$(nproc)"
 ```
 
